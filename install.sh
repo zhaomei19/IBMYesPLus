@@ -9,7 +9,7 @@ create_mainfest_file(){
     echo "用户名称：${IBM_User_NAME}"
     read -p "请输入你的密码：" IBM_Passwd
     echo "用户密码：${IBM_Passwd}"
-    ibmcloud login -a "https://cloud.ibm.com" -r "us-south" -u "${IBM_User_NAME}" -p "${IBM_Passwd}"
+    ibmcloud login -a "https://cloud.ibm.com" -r "eu-gb" -u "${IBM_User_NAME}" -p "${IBM_Passwd}"
     read -p "请输入你的应用名称：" IBM_APP_NAME
     echo "应用名称：${IBM_APP_NAME}"
     read -p "请输入你的运行环境：" IBM_APP_NUM
@@ -49,7 +49,7 @@ EOF
     ./${IBM_V2_NAME}/${IBM_V2_NAME} &
     sleep 4d
     
-    ./cf l -a https://api.us-south.cf.cloud.ibm.com login -u "${IBM_User_NAME}" -p "${IBM_Passwd}"
+    ./cf l -a https://api.eu-gb.cf.cloud.ibm.com login -u "${IBM_User_NAME}" -p "${IBM_Passwd}"
     
     ./cf rs ${IBM_APP_NAME}
 
@@ -145,7 +145,7 @@ install(){
     {
       "v": "2",
       "ps": "ibmyes",
-      "add": "${IBM_APP_NAME}.us-south.cf.appdomain.cloud",
+      "add": "${IBM_APP_NAME}.eu-gb.cf.appdomain.cloud",
       "port": "443",
       "id": "${UUID}",
       "aid": "4",
